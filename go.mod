@@ -5,6 +5,7 @@ go 1.19
 require github.com/go-chi/chi/v5 v5.0.7
 
 require (
+	github.com/alexedwards/scs/v2 v2.5.0 // indirect
 	github.com/cosmtrek/air v1.40.4 // indirect
 	github.com/creack/pty v1.1.18 // indirect
 	github.com/fatih/color v1.13.0 // indirect

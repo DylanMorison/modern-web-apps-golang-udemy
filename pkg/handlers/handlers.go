@@ -1,10 +1,10 @@
 package handlers
 
 import (
-	"net/http"
 	"github.com/DylanMorison/go-course/pkg/config"
 	"github.com/DylanMorison/go-course/pkg/models"
 	"github.com/DylanMorison/go-course/pkg/render"
+	"net/http"
 )
 
 // The repository used by the handlers
