@@ -2,12 +2,12 @@ package render
 
 import (
 	"bytes"
+	"github.com/DylanMorison/go-course/pkg/config"
+	"github.com/DylanMorison/go-course/pkg/models"
 	"html/template"
 	"log"
 	"net/http"
 	"path/filepath"
-	"github.com/DylanMorison/go-course/pkg/config"
-	"github.com/DylanMorison/go-course/pkg/models"
 )
 
 var app *config.AppConfig
@@ -15,6 +15,10 @@ var app *config.AppConfig
 // sets the config for the template package
 func NewTemplates(a *config.AppConfig) {
 	app = a
+}
+
+func AddDefaultData(td *models.TemplateData) *models.TemplateData {
+	return td
 }
 
 func RenderTemplate(w http.ResponseWriter, tmpl string, td *models.TemplateData) {
@@ -33,6 +37,8 @@ func RenderTemplate(w http.ResponseWriter, tmpl string, td *models.TemplateData)
 	}
 
 	buf := new(bytes.Buffer)
+
+	td = AddDefaultData(td)
 
 	err := t.Execute(buf, td)
 	if err != nil {
