@@ -31,7 +31,7 @@ func main() {
 	http.HandleFunc("/", handlers.Repo.Home)
 	http.HandleFunc("/about", handlers.Repo.About)
 
-	fmt.Printf("starting app on port %s", portNumber)
+	fmt.Printf("starting app on localhost%s\n", portNumber)
 	// _ = http.ListenAndServe(portNumber, nil)
 
 	srv := &http.Server {
