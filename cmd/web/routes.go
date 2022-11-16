@@ -1,17 +1,17 @@
 package main
 
 import (
-	"net/http"
 	"github.com/DylanMorison/go-course/pkg/config"
 	"github.com/DylanMorison/go-course/pkg/handlers"
 	"github.com/go-chi/chi/v5"
 	"github.com/go-chi/chi/v5/middleware"
+	"net/http"
 )
 
 func routes(app *config.AppConfig) http.Handler {
 	mux := chi.NewRouter()
 
-	mux.Use(middleware.Recoverer)	
+	mux.Use(middleware.Recoverer)
 	mux.Use(WriteToConsole)
 	mux.Use(NoSurf)
 	mux.Use(SessionLoad)
